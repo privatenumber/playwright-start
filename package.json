@@ -1,0 +1,51 @@
+{
+	"name": "playwright-start",
+	"version": "0.0.0-semantic-release",
+	"description": "Start a playwright browser server via CLI",
+	"keywords": [
+		"playwright",
+		"cli",
+		"start",
+		"browser",
+		"server"
+	],
+	"license": "MIT",
+	"repository": "privatenumber/playwright-start",
+	"funding": "https://github.com/privatenumber/playwright-start?sponsor=1",
+	"author": {
+		"name": "Hiroki Osame",
+		"email": "hiroki.osame@gmail.com"
+	},
+	"files": [
+		"lib",
+		"bin"
+	],
+	"bin": "bin/playwright-start.js",
+	"main": "lib/connect.js",
+	"scripts": {
+		"lint": "eslint .",
+		"test": "jest"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": "eslint"
+	},
+	"dependencies": {
+		"cac": "^6.7.1",
+		"exit-hook": "^2.2.0",
+		"playwright": "^1.8.0"
+	},
+	"devDependencies": {
+		"@pvtnbr/eslint-config-base": "^0.1.10",
+		"eslint": "^7.20.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^10.5.4"
+	},
+	"eslintConfig": {
+		"extends": "@pvtnbr/eslint-config-base"
+	}
+}
