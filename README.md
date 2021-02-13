@@ -26,3 +26,23 @@ const connect = require('playwright-start')
 
 const browser = await connect()
 ```
+
+## 👨‍🏫 Examples
+
+### Starting a non-headless Chromium server
+
+```sh
+npx playwright-start --headless=false
+```
+
+### Starting a Firefox or Webkit server
+
+Firefox:
+```sh
+npx playwright-start firefox
+```
+
+Webkit:
+```sh
+npx playwright-start webkit
+```
