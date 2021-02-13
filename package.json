@@ -23,8 +23,7 @@
 	"bin": "bin/playwright-start.js",
 	"main": "lib/connect.js",
 	"scripts": {
-		"lint": "eslint .",
-		"test": "jest"
+		"lint": "eslint ."
 	},
 	"husky": {
 		"hooks": {
