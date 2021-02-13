@@ -1,6 +1,6 @@
 # playwright-start [![Latest version](https://badgen.net/npm/v/playwright-start)](https://npm.im/playwright-start) [![Monthly downloads](https://badgen.net/npm/dm/playwright-start)](https://npm.im/playwright-start) [![Install size](https://packagephobia.now.sh/badge?p=playwright-start)](https://packagephobia.now.sh/result?p=playwright-start)
 
-Start a long-running [playwright](https://playwright.dev) browser server via CLI.
+Start a long-running [Playwright](https://playwright.dev) browser server via CLI.
 
 <sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 

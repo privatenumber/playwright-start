@@ -1,7 +1,7 @@
 {
 	"name": "playwright-start",
 	"version": "0.0.0-semantic-release",
-	"description": "Start a playwright browser server via CLI",
+	"description": "Start a Playwright browser server via CLI",
 	"keywords": [
 		"playwright",
 		"cli",
