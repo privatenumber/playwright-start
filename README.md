@@ -28,8 +28,9 @@ const connect = require('playwright-start')
 (async () => {
     const browser = await connect()
     
+	// Emulate Pixel 2 XL
     const context = await browser.newContext({
-        ...Pixel
+        ...devices['Pixel 2 XL']
     })
 
     const page = await context.newPage()
