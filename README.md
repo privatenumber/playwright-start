@@ -20,11 +20,22 @@ Start a browser server:
 npx playwright-start
 ```
 
-Connect to it from your code:
+Connect from your code:
 ```js
+const { devices } = require('playwright')
 const connect = require('playwright-start')
 
-const browser = await connect()
+(async () => {
+    const browser = await connect()
+    
+    const context = await browser.newContext({
+        ...Pixel
+    })
+
+    const page = await context.newPage()
+
+    // ...
+})()
 ```
 
 ## 👨‍🏫 Examples
