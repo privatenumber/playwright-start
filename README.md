@@ -15,29 +15,29 @@ npm i -D playwright-start
 ```
 
 ## 🚦 Quick Setup
-Start a browser server:
-```sh
-npx playwright-start
-```
+1. Start a browser server from a separate terminal session:
+	```sh
+	npx playwright-start
+	```
 
-Connect from your code:
-```js
-const { devices } = require('playwright')
-const connect = require('playwright-start')
+2. Connect from your code:
+	```js
+	const { devices } = require('playwright')
+	const connect = require('playwright-start')
 
-(async () => {
-    const browser = await connect()
-    
-	// Emulate Pixel 2 XL
-    const context = await browser.newContext({
-        ...devices['Pixel 2 XL']
-    })
+	(async () => {
+	    const browser = await connect()
 
-    const page = await context.newPage()
+		// Emulate Pixel 2 XL
+	    const context = await browser.newContext({
+		...devices['Pixel 2 XL']
+	    })
 
-    // ...
-})()
-```
+	    const page = await context.newPage()
+
+	    // ...
+	})()
+	```
 
 ## 👨‍🏫 Examples
 
