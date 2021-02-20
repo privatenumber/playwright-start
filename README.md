@@ -1,4 +1,4 @@
-# playwright-start [![Latest version](https://badgen.net/npm/v/playwright-start)](https://npm.im/playwright-start) [![Monthly downloads](https://badgen.net/npm/dm/playwright-start)](https://npm.im/playwright-start) [![Install size](https://packagephobia.now.sh/badge?p=playwright-start)](https://packagephobia.now.sh/result?p=playwright-start)
+# playwright-start [![Latest version](https://badgen.net/npm/v/playwright-start)](https://npm.im/playwright-start) [![Monthly downloads](https://badgen.net/npm/dm/playwright-start)](https://npm.im/playwright-start)
 
 Start a long-running [Playwright](https://playwright.dev) browser server via CLI.
 
@@ -28,9 +28,9 @@ npm i -D playwright-start
 	(async () => {
 	    const browser = await connect()
 
-		// Emulate Pixel 2 XL
+	    // Emulate Pixel 2 XL
 	    const context = await browser.newContext({
-		...devices['Pixel 2 XL']
+	        ...devices['Pixel 2 XL']
 	    })
 
 	    const page = await context.newPage()
