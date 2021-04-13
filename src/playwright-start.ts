@@ -4,24 +4,25 @@ import assert from 'assert';
 import playwright, { BrowserType as PlaywrightBrowserType } from 'playwright';
 import exitHook from 'exit-hook';
 import cac from 'cac';
-import WS_ENDPOINT_FILE from './ws-endpoint-file.js';
+import WS_ENDPOINT_FILE from './ws-endpoint-file';
 import {
 	BROWSERS,
 	BrowserType,
 	WsEndpointData,
 } from './interfaces';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const packageJson = require('../package.json');
 
 async function launchServer<Browser>(
 	browser: PlaywrightBrowserType<Browser>,
-	options: Parameters<PlaywrightBrowserType<Browser>["launchServer"]>[0],
+	options: Parameters<PlaywrightBrowserType<Browser>['launchServer']>[0],
 ) {
 	const browserServer = await browser.launchServer(options);
 	const wsEndpointData: WsEndpointData = {
 		pid: browserServer.process().pid,
 		wsEndpoint: browserServer.wsEndpoint(),
-		// @ts-expect-error
+		// @ts-expect-error hidden property
 		browserType: browser._initializer.name,
 	};
 
@@ -44,7 +45,7 @@ function validateBrowserType(browserTypeName: string): browserTypeName is Browse
 			{
 				// TODO: Remove array once this is done https://github.com/cacjs/cac/issues/106
 				type: [Boolean],
-			}
+			},
 		)
 		.option(
 			'--devtools',
@@ -60,11 +61,12 @@ function validateBrowserType(browserTypeName: string): browserTypeName is Browse
 	const parsed = cli.parse();
 
 	if (parsed.options.help || parsed.options.version) {
+		// eslint-disable-next-line unicorn/no-process-exit
 		process.exit(0);
 	}
 
-	parsed.options.headless = parsed.options.headless[0];
-	parsed.options.devtools = parsed.options.devtools[0];
+	[parsed.options.headless] = parsed.options.headless;
+	[parsed.options.devtools] = parsed.options.devtools;
 
 	const [browserTypeName = BROWSERS[0]] = parsed.args;
 
