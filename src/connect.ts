@@ -13,9 +13,9 @@ async function readWsEndpointFile(): Promise<WsEndpointData> {
 	return JSON.parse((await fs.promises.readFile(WS_ENDPOINT_FILE)).toString());
 }
 
-type Browsers = ChromiumBrowser | FirefoxBrowser | WebKitBrowser;
+type Browser = ChromiumBrowser | FirefoxBrowser | WebKitBrowser;
 
-async function connect<B extends Browsers>(): Promise<B> {
+async function connect<B extends Browser>(): Promise<B> {
 	assert(
 		fs.existsSync(WS_ENDPOINT_FILE),
 		'Browser not initialized. Run `playwright-start` in a separate terminal.',
