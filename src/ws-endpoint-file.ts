@@ -1,5 +1,5 @@
-const path = require('path');
+import path from 'path';
 
 const WS_ENDPOINT_FILE = path.resolve(process.env.HOME, '.ws-endpoint');
 
-module.exports = WS_ENDPOINT_FILE;
+export default WS_ENDPOINT_FILE;

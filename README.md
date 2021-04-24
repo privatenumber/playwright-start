@@ -1,4 +1,4 @@
-# playwright-start [![Latest version](https://badgen.net/npm/v/playwright-start)](https://npm.im/playwright-start) [![Monthly downloads](https://badgen.net/npm/dm/playwright-start)](https://npm.im/playwright-start) [![Install size](https://packagephobia.now.sh/badge?p=playwright-start)](https://packagephobia.now.sh/result?p=playwright-start)
+# playwright-start [![Latest version](https://badgen.net/npm/v/playwright-start)](https://npm.im/playwright-start) [![Monthly downloads](https://badgen.net/npm/dm/playwright-start)](https://npm.im/playwright-start)
 
 Start a long-running [Playwright](https://playwright.dev) browser server via CLI.
 
@@ -15,29 +15,32 @@ npm i -D playwright-start
 ```
 
 ## 🚦 Quick Setup
-Start a browser server:
-```sh
-npx playwright-start
-```
+1. Start a browser server from a separate terminal session:
+	```sh
+	npx playwright-start
+	```
 
-Connect from your code:
-```js
-const { devices } = require('playwright')
-const connect = require('playwright-start')
+2. Connect from your code:
+	```ts
+	import {
+	    ChromiumBrowser,
+	    devices,
+	} from 'playwright'
+	import connect from 'playwright-start'
 
-(async () => {
-    const browser = await connect()
-    
-	// Emulate Pixel 2 XL
-    const context = await browser.newContext({
-        ...devices['Pixel 2 XL']
-    })
+	(async () => {
+	    const browser = await connect<ChromiumBrowser>()
 
-    const page = await context.newPage()
+	    const context = await browser.newContext({
+	        // Emulate Pixel 2 XL
+	        ...devices['Pixel 2 XL']
+	    })
 
-    // ...
-})()
-```
+	    const page = await context.newPage()
+
+	    // ...
+	})()
+	```
 
 ## 👨‍🏫 Examples
 
