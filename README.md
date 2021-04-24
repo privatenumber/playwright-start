@@ -21,15 +21,18 @@ npm i -D playwright-start
 	```
 
 2. Connect from your code:
-	```js
-	const { devices } = require('playwright')
-	const connect = require('playwright-start')
+	```ts
+	import {
+	    ChromiumBrowser,
+	    devices,
+	} from 'playwright'
+	import connect from 'playwright-start'
 
 	(async () => {
-	    const browser = await connect()
+	    const browser = await connect<ChromiumBrowser>()
 
-	    // Emulate Pixel 2 XL
 	    const context = await browser.newContext({
+	        // Emulate Pixel 2 XL
 	        ...devices['Pixel 2 XL']
 	    })
 
