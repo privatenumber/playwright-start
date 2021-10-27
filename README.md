@@ -2,7 +2,7 @@
 
 Start a long-running [Playwright](https://playwright.dev) browser server via CLI.
 
-<sub>If you like this project, please star it & [follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
+<sub>Support this project by ⭐️ starring and sharing it. [Follow me](https://github.com/privatenumber) to see what other cool projects I'm working on! ❤️</sub>
 
 ## 🙋‍♂️ Why?
 When developing browser automation scripts, there's a lot of overhead in browser start up every time you test a change.
